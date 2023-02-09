@@ -1,0 +1,100 @@
+:root {
+  --background: #222;
+}
+
+html {
+  height: 100%; /* Fallback CSS for IE 4-6 and older browsers. Note: Without this setting, body below cannot achieve 100% height. */
+  background:var(--background);/* FOR TESTING: Next add a large block of text or content to your page and make sure this background color always fills the screen as your content scrolls off the page. If so, this works. You have 100% height with flexible content! */
+  font-size: 13px;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  background: var(--background);/* FOR TESTING: Next add a large block of text or content to your page and make sure this background color always fills the screen as your content scrolls off the page. If so, this works. You have 100% height with flexible content! */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.side-panel {
+  padding: 20px;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.table-panel {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 10px;
+}
+
+.btn {
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* font-size: 1.2em; */
+  font-weight: 600;
+  padding: 0.15em 0.5em 0;
+  text-align: left;
+  line-height: 2;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.table-panel table {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  height: var(--cell-side)px;
+}
+
+#life-table {
+  border-collapse: collapse;
+}
+
+.cell {
+  height: calc(var(--cell-side) * 1px);
+  width: calc(var(--cell-side) *1px);
+  box-sizing: border-box;
+
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cell.alive {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.cell.alive:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
